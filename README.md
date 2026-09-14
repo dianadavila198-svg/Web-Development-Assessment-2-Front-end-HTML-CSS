@@ -23,6 +23,28 @@ A lightweight Node.js and Express web application built for **CS551S: Web Develo
 
 ---
 
+### How to Run the Project Locally
+1. Clone or extract the files into your working directory.
+2. Install dependencies (open terminal in project root):
+
+Bash
+npm install
+Start the Express server:
+
+Bash
+node server.js
+(Or run npm start if the script is configured).
+
+### Accessing the Application
+Open your browser and navigate to:
+
+Main Order Page: http://localhost:3000/ or http://localhost:3000/index.html
+
+Order History Page: http://localhost:3000/orders.html
+
+### Academic Integrity & Citation
+This project was completed independently as part of individual assessment requirements for CS551S at the University of Aberdeen.
+
 ## Project Structure
 
 ```text
@@ -36,24 +58,3 @@ A lightweight Node.js and Express web application built for **CS551S: Web Develo
 ├── server.js            # Express server configuration & routes
 ├── package.json         # Node dependencies & project scripts
 └── README.md            # Project documentation
-
-### How to Run the Project Locally
-1. Extract/Clone the files into your working directory.
-2. Install dependencies (opens terminal in project root):
-
-Bash
-npm install
-Start the Express server:
-
-Bash
-node server.js
-(Or run npm start if script is configured).
-
-### Access the application in your web browser:
-
-Main Order Page: http://localhost:3000/ or http://localhost:3000/index.html
-
-Order History Page: http://localhost:3000/orders.html
-
-###Academic Integrity & Citation
-This project was completed independently as part of individual assessment requirements for CS551S at the University of Aberdeen.
