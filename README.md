@@ -22,7 +22,21 @@ A lightweight Node.js and Express web application built for **CS551S: Web Develo
 * **Order History View:** Accessible via `/orders.html`, displaying all active session orders stored in server memory.
 
 ---
+## Project Structure
 
+```text
+.
+├── public/
+│   ├── index.html       # Main shop page containing the order form
+│   ├── success.html     # Confirmation redirect page
+│   ├── error.html       # Validation error redirect page
+│   ├── orders.html      # Session order history page
+│   └── styles.css       # Site styling
+├── server.js            # Express server configuration & routes
+├── package.json         # Node dependencies & project scripts
+└── README.md            # Project documentation
+
+```
 ### How to Run the Project Locally
 1. Clone or extract the files into your working directory.
 2. Install dependencies (open terminal in project root):
@@ -45,16 +59,3 @@ Order History Page: http://localhost:3000/orders.html
 ### Academic Integrity & Citation
 This project was completed independently as part of individual assessment requirements for CS551S at the University of Aberdeen.
 
-## Project Structure
-
-```text
-.
-├── public/
-│   ├── index.html       # Main shop page containing the order form
-│   ├── success.html     # Confirmation redirect page
-│   ├── error.html       # Validation error redirect page
-│   ├── orders.html      # Session order history page
-│   └── styles.css       # Site styling
-├── server.js            # Express server configuration & routes
-├── package.json         # Node dependencies & project scripts
-└── README.md            # Project documentation
