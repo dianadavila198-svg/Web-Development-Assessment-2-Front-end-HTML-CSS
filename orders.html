@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moss and Thorn Nursery - All Orders</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <h1 class="brand">Moss and Thorn Nursery</h1>
+            <!-- When using Express, change "index.html" to "/" and "orders.html" to "/orders" -->
+            <nav class="nav">
+                <a href="index.html">New Order</a>
+                <a href="orders.html">View Orders</a>
+ 
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="intro">
+            <h2>All Orders</h2>
+            <p class="lede">
+                Below is a list of all orders placed during this session.
+            </p>
+        </section>
+
+        <div id="orders-list"></div>
+    </main>
+
+<script>
+    // await for handling asynchronous server requests
+    async function loadPlants() {
+        try {
+            // GET request to the server API to retrieve the stored array
+            const response = await fetch('/api/plants');
+            
+            //Unpack the data response from JSON so JavaScript can read it
+            const plants = await response.json();
+
+            // Reference the <ul> element in HTML where data will be injected
+            const listElement = document.getElementById('orders-list');
+            
+            // Reset the list content to prevent duplicate entries on reload
+            listElement.innerHTML = ''; 
+
+            // Iterate through the array to generate HTML for each record
+            plants.forEach(entry => {
+                // Create a new list item element to display on the page
+                const listItem = document.createElement('li');
+                
+                // Assign CSS class for style.css
+                listItem.className = 'plant-item'; 
+
+                // Inject dynamic data 
+                listItem.innerHTML = `
+                    <strong>Plant Name:</strong> ${entry.plantName} | 
+                    <strong>Quantity:</strong> ${entry.quantity}
+                `;
+
+                // Append the completed list item to the parent <ul> element
+                listElement.appendChild(listItem);
+            });
+            
+        } catch (error) {
+            // Log any network or server errors to the console for debugging
+            console.error('Error fetching order:', error);
+        }
+    }
+
+    // Execute the load function automatically once the window has fully loaded
+    window.onload = loadPlants;
+
+    </script>
+
+    <!--<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    </script>-->
+
+     <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; <span id="year"></span> Moss and Thorn Nursery</p>
+        </div>
+    </footer>   
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moss and Thorn Nursery - Order</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <h1 class="brand">Moss and Thorn Nursery</h1>
+            <!-- When using Express, change "index.html" to "/" and "orders.html" to "/orders" -->
+            <nav class="nav">
+                <a href="index.html">New Order</a>
+                <a href="orders.html">View Orders</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="intro">
+            <h2>Order a Plant</h2>
+            <p class="lede">
+                Use the form below to place an order.
+            </p>
+        </section>
+
+        <form class="card form" action="http://localhost:3000/order" method="POST" novalidate>
+            <div class="field">
+                <label for="plantName">Plant Name <span aria-hidden="true">*</span></label>
+                <input id="plantName" name="plantName" type="text" placeholder="For example: Monstera Deliciosa"
+                    list="title-suggestions" />
+                <datalist id="title-suggestions">
+                    <option value="Monstera Deliciosa"></option>
+                    <option value="Fiddle Leaf Fig"></option>
+                    <option value="Snake Plant"></option>
+                    <option value="Peace Lily"></option>
+                </datalist>
+            </div>
+
+            <div class="field">
+                <label for="quantity">Quantity <span aria-hidden="true">*</span></label>
+                <input id="quantity" name="quantity" type="number" inputmode="numeric" value="1" />
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn">Place Order</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; <span id="year"></span> Moss and Thorn Nursery</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

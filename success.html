@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moss and Thorn Nursery - Order Placed</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <h1 class="brand">Moss and Thorn Nursery</h1>
+            <!-- When using Express, change "index.html" to "/" and "orders.html" to "/orders" -->
+            <nav class="nav">
+                <a href="index.html">New Order</a>
+                <a href="orders.html">View Orders</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="intro">
+            <h2>Order Placed Successfully</h2>
+            <p class="lede">
+                Your order has been received.
+            </p>
+                <p>item: <strong id="plantName"></strong>.</p>
+                <p>Quantity: <strong id="quantity"></strong>.</p>
+
+                <button onclick="window.location.href='/orders.html'"> 
+                    View all your orders
+                </button>
+        </section>
+    </main>
+
+  <script>
+    // Look at the address bar (URL) and find the parameters
+    const params = new URLSearchParams(window.location.search);
+    
+    // Values from the URL 
+    const plantValue = params.get('plantName');
+    const qtyValue = params.get('quantity');
+
+    // Put values into HTML 
+    if (plantValue) {
+        document.getElementById('plantName').textContent = plantValue;
+    }
+    if (qtyValue) {
+        document.getElementById('quantity').textContent = qtyValue;
+    }
+  </script>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; <span id="year"></span> Moss and Thorn Nursery</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

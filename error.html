@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moss and Thorn Nursery - Order Error</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <h1 class="brand">Moss and Thorn Nursery</h1>
+            <!-- When using Express, change "index.html" to "/" and "orders.html" to "/orders" -->
+            <nav class="nav">
+                <a href="index.html">New Order</a>
+                <a href="orders.html">View Orders</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="intro">
+            <h2>Order Could Not Be Placed</h2>
+            <p class="lede">
+                There was a problem with your submission.Please check the below and try again.
+                <br><br>
+                  <li>All fields must be filled in.</li>
+                  <li>The minimum value for quantity is 1.</li>
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; <span id="year"></span> Moss and Thorn Nursery</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

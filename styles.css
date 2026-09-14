@@ -1,0 +1,184 @@
+/* Base reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a2e1a;
+    background: #f4f7f2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Layout helpers */
+.wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
+    background: #1b3a1b;
+    color: #ffffff;
+    padding: 1rem 0;
+}
+
+.brand {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav {
+    margin-top: 0.25rem;
+}
+
+.nav a {
+    color: #a7c4a0;
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.95rem;
+}
+
+.nav a:hover,
+.nav a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+}
+
+/* Intro section */
+.intro {
+    margin: 2rem 0 1rem;
+}
+
+.lede {
+    margin: 0.5rem 0 0;
+    color: #3d5a3d;
+}
+
+/* Card form */
+.card {
+    background: #ffffff;
+    border: 1px solid #d4e0d0;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.form {
+    margin-bottom: 3rem;
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #b5c7ae;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: #ffffff;
+    color: #1a2e1a;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: 3px solid rgba(56, 142, 60, 0.25);
+    border-color: #388e3c;
+}
+
+.actions {
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    border: 1px solid #2e7d32;
+    background: #2e7d32;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #1b5e20;
+    border-color: #1b5e20;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid #d4e0d0;
+    color: #5a7a5a;
+    padding: 1.25rem 0 2.5rem;
+    font-size: 0.95rem;
+    background: #ffffff;
+    margin-top: auto;
+}
+
+/* Responsive tweaks */
+@media (min-width: 720px) {
+    .nav {
+        text-align: right;
+    }
+
+    .site-header .wrap {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.plants-item {
+  border-left: 6px solid #4caf50; /* Thicker accent line */
+  background: #ffffff; /* Clean white background */
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Very light shadow for the list items */
+}
+
+/* --- Submit Button --- */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #56a558;
+  color: white;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Professional transition curve */
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
